@@ -93,7 +93,7 @@
 		<maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
 		<!-- for travis usage -->
 		<github.global.server>github</github.global.server>
-		<github.global.oauth2Token>${env.GITHUB_OAUTH_TOKEN}</github.global.oauth2Token>
+<!--		<github.global.oauth2Token>${env.GITHUB_OAUTH_TOKEN}</github.global.oauth2Token>-->
 	</properties>
 
 	<modules>
@@ -479,18 +479,18 @@
 						<failOnError>false</failOnError>
 					</configuration>
 				</plugin>
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>cobertura-maven-plugin</artifactId>
-					<version>2.7</version>
-					<dependencies>
-						<dependency>
-							<groupId>ch.qos.logback</groupId>
-							<artifactId>logback-classic</artifactId>
-							<version>1.1.7</version>
-						</dependency>
-					</dependencies>
-				</plugin>
+<!--				<plugin>-->
+<!--					<groupId>org.codehaus.mojo</groupId>-->
+<!--					<artifactId>cobertura-maven-plugin</artifactId>-->
+<!--					<version>2.7</version>-->
+<!--					<dependencies>-->
+<!--						<dependency>-->
+<!--							<groupId>ch.qos.logback</groupId>-->
+<!--							<artifactId>logback-classic</artifactId>-->
+<!--							<version>1.1.7</version>-->
+<!--						</dependency>-->
+<!--					</dependencies>-->
+<!--				</plugin>-->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-assembly-plugin</artifactId>
@@ -617,42 +617,42 @@
 			</activation>
 			<build>
 				<plugins>
-					<plugin>
-						<groupId>com.github.github</groupId>
-						<artifactId>site-maven-plugin</artifactId>
-						<version>0.12</version>
-						<configuration>
-							<message>Site for ${project.artifactId}, ${project.version}</message>
-							<path>${github.path}</path>
-							<merge>true</merge>
-						</configuration>
-						<executions>
-							<execution>
-								<goals>
-									<goal>site</goal>
-								</goals>
-								<phase>site</phase>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.jacoco</groupId>
-						<artifactId>jacoco-maven-plugin</artifactId>
-						<version>0.8.3</version>
-						<executions>
-							<execution>
-								<id>prepare-agent</id>
-								<goals>
-									<goal>prepare-agent</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.eluder.coveralls</groupId>
-						<artifactId>coveralls-maven-plugin</artifactId>
-						<version>4.2.0</version>
-					</plugin>
+<!--					<plugin>-->
+<!--						<groupId>com.github.github</groupId>-->
+<!--						<artifactId>site-maven-plugin</artifactId>-->
+<!--						<version>0.12</version>-->
+<!--						<configuration>-->
+<!--							<message>Site for ${project.artifactId}, ${project.version}</message>-->
+<!--							<path>${github.path}</path>-->
+<!--							<merge>true</merge>-->
+<!--						</configuration>-->
+<!--						<executions>-->
+<!--							<execution>-->
+<!--								<goals>-->
+<!--									<goal>site</goal>-->
+<!--								</goals>-->
+<!--								<phase>site</phase>-->
+<!--							</execution>-->
+<!--						</executions>-->
+<!--					</plugin>-->
+<!--					<plugin>-->
+<!--						<groupId>org.jacoco</groupId>-->
+<!--						<artifactId>jacoco-maven-plugin</artifactId>-->
+<!--						<version>0.8.3</version>-->
+<!--						<executions>-->
+<!--							<execution>-->
+<!--								<id>prepare-agent</id>-->
+<!--								<goals>-->
+<!--									<goal>prepare-agent</goal>-->
+<!--								</goals>-->
+<!--							</execution>-->
+<!--						</executions>-->
+<!--					</plugin>-->
+<!--					<plugin>-->
+<!--						<groupId>org.eluder.coveralls</groupId>-->
+<!--						<artifactId>coveralls-maven-plugin</artifactId>-->
+<!--						<version>4.2.0</version>-->
+<!--					</plugin>-->
 				</plugins>
 			</build>
 		</profile>
@@ -751,26 +751,26 @@
 					<!-- end of eureka -->
 				</dependencies>
 			</dependencyManagement>
-			<dependencies>
-				<dependency>
-					<groupId>com.ctrip.3rdparty.tomcat.embed</groupId>
-					<artifactId>tomcat-embed-core</artifactId>
-				</dependency>
-			</dependencies>
+<!--			<dependencies>-->
+<!--				<dependency>-->
+<!--					<groupId>com.ctrip.3rdparty.tomcat.embed</groupId>-->
+<!--					<artifactId>tomcat-embed-core</artifactId>-->
+<!--				</dependency>-->
+<!--			</dependencies>-->
 		</profile>
 		<profile>
 			<!-- for ctrip development with logging capability -->
 			<id>ctrip-logging</id>
-            <dependencies>
-				<dependency>
-					<groupId>com.dianping.cat</groupId>
-					<artifactId>cat-client</artifactId>
-				</dependency>
-				<dependency>
-					<groupId>com.ctrip.framework.clogging</groupId>
-					<artifactId>clogging-agent</artifactId>
-				</dependency>
-			</dependencies>
+<!--            <dependencies>-->
+<!--				<dependency>-->
+<!--					<groupId>com.dianping.cat</groupId>-->
+<!--					<artifactId>cat-client</artifactId>-->
+<!--				</dependency>-->
+<!--				<dependency>-->
+<!--					<groupId>com.ctrip.framework.clogging</groupId>-->
+<!--					<artifactId>clogging-agent</artifactId>-->
+<!--				</dependency>-->
+<!--			</dependencies>-->
 		</profile>
 		<profile>
 			<!-- for ctrip production -->
@@ -857,117 +857,117 @@
 					<!-- end of eureka -->
 				</dependencies>
 			</dependencyManagement>
-			<dependencies>
-				<dependency>
-					<groupId>com.dianping.cat</groupId>
-					<artifactId>cat-client</artifactId>
-				</dependency>
-				<dependency>
-					<groupId>com.ctrip.3rdparty.tomcat.embed</groupId>
-					<artifactId>tomcat-embed-core</artifactId>
-				</dependency>
-				<dependency>
-					<groupId>com.ctrip.framework.clogging</groupId>
-					<artifactId>clogging-agent</artifactId>
-				</dependency>
-				<dependency>
-					<groupId>com.ctrip.platform</groupId>
-					<artifactId>ctrip-dal-client</artifactId>
-				</dependency>
-			</dependencies>
+<!--			<dependencies>-->
+<!--				<dependency>-->
+<!--					<groupId>com.dianping.cat</groupId>-->
+<!--					<artifactId>cat-client</artifactId>-->
+<!--				</dependency>-->
+<!--				<dependency>-->
+<!--					<groupId>com.ctrip.3rdparty.tomcat.embed</groupId>-->
+<!--					<artifactId>tomcat-embed-core</artifactId>-->
+<!--				</dependency>-->
+<!--				<dependency>-->
+<!--					<groupId>com.ctrip.framework.clogging</groupId>-->
+<!--					<artifactId>clogging-agent</artifactId>-->
+<!--				</dependency>-->
+<!--				<dependency>-->
+<!--					<groupId>com.ctrip.platform</groupId>-->
+<!--					<artifactId>ctrip-dal-client</artifactId>-->
+<!--				</dependency>-->
+<!--			</dependencies>-->
 		</profile>
 		<profile>
 			<id>release</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-javadoc-plugin</artifactId>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-gpg-plugin</artifactId>
-					</plugin>
-				</plugins>
-			</build>
+<!--			<build>-->
+<!--				<plugins>-->
+<!--					<plugin>-->
+<!--						<groupId>org.apache.maven.plugins</groupId>-->
+<!--						<artifactId>maven-javadoc-plugin</artifactId>-->
+<!--					</plugin>-->
+<!--					<plugin>-->
+<!--						<groupId>org.apache.maven.plugins</groupId>-->
+<!--						<artifactId>maven-gpg-plugin</artifactId>-->
+<!--					</plugin>-->
+<!--				</plugins>-->
+<!--			</build>-->
 		</profile>
 		<profile>
 			<id>configdb</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.flywaydb</groupId>
-						<artifactId>flyway-maven-plugin</artifactId>
-						<version>5.2.4</version>
-						<dependencies>
-							<dependency>
-								<groupId>mysql</groupId>
-								<artifactId>mysql-connector-java</artifactId>
-								<version>5.1.46</version>
-							</dependency>
-						</dependencies>
-						<configuration>
-							<configFile>scripts/db/migration/flyway-configdb.properties</configFile>
-						</configuration>
-						<inherited>false</inherited>
-					</plugin>
-				</plugins>
-			</build>
+<!--			<build>-->
+<!--				<plugins>-->
+<!--					<plugin>-->
+<!--						<groupId>org.flywaydb</groupId>-->
+<!--						<artifactId>flyway-maven-plugin</artifactId>-->
+<!--						<version>5.2.4</version>-->
+<!--						<dependencies>-->
+<!--							<dependency>-->
+<!--								<groupId>mysql</groupId>-->
+<!--								<artifactId>mysql-connector-java</artifactId>-->
+<!--								<version>5.1.46</version>-->
+<!--							</dependency>-->
+<!--						</dependencies>-->
+<!--						<configuration>-->
+<!--							<configFile>scripts/db/migration/flyway-configdb.properties</configFile>-->
+<!--						</configuration>-->
+<!--						<inherited>false</inherited>-->
+<!--					</plugin>-->
+<!--				</plugins>-->
+<!--			</build>-->
 		</profile>
 		<profile>
 			<id>portaldb</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.flywaydb</groupId>
-						<artifactId>flyway-maven-plugin</artifactId>
-						<version>5.2.4</version>
-						<dependencies>
-							<dependency>
-								<groupId>mysql</groupId>
-								<artifactId>mysql-connector-java</artifactId>
-								<version>5.1.46</version>
-							</dependency>
-						</dependencies>
-						<configuration>
-							<configFile>scripts/db/migration/flyway-portaldb.properties</configFile>
-						</configuration>
-						<inherited>false</inherited>
-					</plugin>
-				</plugins>
-			</build>
+<!--			<build>-->
+<!--				<plugins>-->
+<!--					<plugin>-->
+<!--						<groupId>org.flywaydb</groupId>-->
+<!--						<artifactId>flyway-maven-plugin</artifactId>-->
+<!--						<version>5.2.4</version>-->
+<!--						<dependencies>-->
+<!--							<dependency>-->
+<!--								<groupId>mysql</groupId>-->
+<!--								<artifactId>mysql-connector-java</artifactId>-->
+<!--								<version>5.1.46</version>-->
+<!--							</dependency>-->
+<!--						</dependencies>-->
+<!--						<configuration>-->
+<!--							<configFile>scripts/db/migration/flyway-portaldb.properties</configFile>-->
+<!--						</configuration>-->
+<!--						<inherited>false</inherited>-->
+<!--					</plugin>-->
+<!--				</plugins>-->
+<!--			</build>-->
 		</profile>
 	</profiles>
 
 	<reporting>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-project-info-reports-plugin</artifactId>
-				<version>2.9</version>
-				<reportSets>
-					<reportSet>
-						<reports>
-							<report>index</report>
-							<report>summary</report>
-							<report>dependency-info</report>
-							<report>project-team</report>
-							<report>scm</report>
-							<report>issue-tracking</report>
-							<report>mailing-list</report>
-							<!-- <report>dependency-management</report> -->
-							<!-- <report>dependencies</report> -->
-							<!-- <report>dependency-convergence</report> -->
-							<report>cim</report>
-							<report>plugin-management</report>
-							<report>plugins</report>
-							<report>distribution-management</report>
-							<report>license</report>
-							<report>modules</report>
-						</reports>
-					</reportSet>
-				</reportSets>
-			</plugin>
+<!--			<plugin>-->
+<!--				<groupId>org.apache.maven.plugins</groupId>-->
+<!--				<artifactId>maven-project-info-reports-plugin</artifactId>-->
+<!--				<version>2.9</version>-->
+<!--				<reportSets>-->
+<!--					<reportSet>-->
+<!--						<reports>-->
+<!--							<report>index</report>-->
+<!--							<report>summary</report>-->
+<!--							<report>dependency-info</report>-->
+<!--							<report>project-team</report>-->
+<!--							<report>scm</report>-->
+<!--							<report>issue-tracking</report>-->
+<!--							<report>mailing-list</report>-->
+<!--							&lt;!&ndash; <report>dependency-management</report> &ndash;&gt;-->
+<!--							&lt;!&ndash; <report>dependencies</report> &ndash;&gt;-->
+<!--							&lt;!&ndash; <report>dependency-convergence</report> &ndash;&gt;-->
+<!--							<report>cim</report>-->
+<!--							<report>plugin-management</report>-->
+<!--							<report>plugins</report>-->
+<!--							<report>distribution-management</report>-->
+<!--							<report>license</report>-->
+<!--							<report>modules</report>-->
+<!--						</reports>-->
+<!--					</reportSet>-->
+<!--				</reportSets>-->
+<!--			</plugin>-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
@@ -980,7 +980,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-pmd-plugin</artifactId>
-				<version>3.6</version>
+				<version>3.4</version>
 				<configuration>
 					<aggregate>true</aggregate>
 				</configuration>
